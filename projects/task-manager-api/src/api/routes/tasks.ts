@@ -4,25 +4,33 @@ import taskService from "@api/services/taskService";
 const router = Router();
 
 router.get("/", (req, res) => {
-  // Logic to get all tasks
   const tasks = taskService.findAll();
   res.status(200).json(tasks);
 });
 
 router.get("/:id", (req, res) => {
-  // Logic to get a specific task by ID
+  const task = taskService.findById(req.params.id);
+  res.status(200).json(task);
 });
 
 router.post("/", (req, res) => {
-  // Logic to create a task
+  const task = taskService.create(req.body);
+  res.status(201).json(task);
 });
 
 router.put("/:id", (req, res) => {
-  // Logic to update a task by ID
+  const task = taskService.update({ id: req.params.id, ...req.body });
+  res.status(200).json(task);
+});
+
+router.delete("/", (req, res) => {
+  const tasks = taskService.deleteAll();
+  res.status(200).json(tasks);
 });
 
 router.delete("/:id", (req, res) => {
-  // Logic to delete a task by ID
+  const task = taskService.deleteById(req.params.id);
+  res.status(200).json(task);
 });
 
 export default router;

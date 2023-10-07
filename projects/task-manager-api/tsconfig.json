@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    // "rootDir": "./src",
     "baseUrl": "./src",
     "paths": {
       "@domain/*": ["domain/*"],
@@ -17,6 +17,6 @@
     "allowJs": true,
     "checkJs": false
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "tests/integration/tasks.spec.ts"],
   "exclude": ["node_modules"]
 }
