@@ -1,10 +1,12 @@
-import { test, expect } from "vitest";
+import request from "supertest";
 import app from "../server";
 
-test("should get a list of tasks", async () => {
-  const res = await app.get("/tasks");
-  expect(res.status).toBe(200);
-  // Add more assertions as needed
-});
+describe("Tasks API", () => {
+  it("should list tasks", async () => {
+    const res = await request(app).get("/tasks");
+    expect(res.status).toBe(200);
+    // Add more assertions based on response body, headers, etc.
+  });
 
-// Add more tests for POST, PUT, DELETE, etc.
+  // Similarly, you can write tests for POST, PUT, DELETE, etc.
+});

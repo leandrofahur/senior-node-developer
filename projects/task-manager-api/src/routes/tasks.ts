@@ -8,6 +8,7 @@ router.post("/", (req, res) => {
 
 router.get("/", (req, res) => {
   // Logic to list tasks
+  res.status(200).send();
 });
 
 router.get("/:id", (req, res) => {
