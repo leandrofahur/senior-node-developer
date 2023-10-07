@@ -12,8 +12,10 @@
     "paths": {
       "@domain/*": ["domain/*"],
       "@api/*": ["api/*"]
-      // ... any other aliases you want
-    }
+    },
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "checkJs": false
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

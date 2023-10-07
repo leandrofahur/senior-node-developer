@@ -1,10 +1,12 @@
 import { Router } from "express";
+import taskService from "@api/services/taskService";
 
 const router = Router();
 
 router.get("/", (req, res) => {
-  // Logic to list tasks
-  res.status(200).send();
+  // Logic to get all tasks
+  const tasks = taskService.findAll();
+  res.status(200).json(tasks);
 });
 
 router.get("/:id", (req, res) => {

@@ -5,5 +5,6 @@ export interface ITaskRepository {
   findAll(): Promise<ITask[]>;
   save(task: ITask): Promise<void>;
   update(task: ITask): Promise<void>;
-  delete(id: string): Promise<void>;
+  deleteById(id: string): Promise<void>;
+  deleteAll(): Promise<void>;
 }

@@ -6,11 +6,11 @@ class TaskService {
   // Later on, we will replace this with a database.
   private tasks: ITask[] = [];
 
-  public getAll(): ITask[] {
+  public findAll(): ITask[] {
     return this.tasks;
   }
 
-  public getById(id: string): ITask | null {
+  public findById(id: string): ITask | null {
     return this.tasks.find((task) => task.id === id) || null;
   }
 
@@ -28,7 +28,7 @@ class TaskService {
   }
 
   public update({ id, title, description, isCompleted }: ITask): void {
-    const task = this.getById(id);
+    const task = this.findById(id);
 
     if (!task) {
       throw new Error("Task not found");
@@ -37,6 +37,20 @@ class TaskService {
     task.title = title;
     task.description = description;
     task.isCompleted = isCompleted;
+  }
+
+  public deleteById({ id }: ITask): void {
+    const taskToBeDeleted = this.findById(id);
+
+    if (!taskToBeDeleted) {
+      throw new Error("Task not found");
+    }
+
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  public deleteAll(): void {
+    this.tasks = [];
   }
 }
 
