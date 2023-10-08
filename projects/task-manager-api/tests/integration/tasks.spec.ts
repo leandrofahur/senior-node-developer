@@ -1,6 +1,5 @@
 import request from "supertest";
-import app from "../../src/server";
-import { ITask } from "@domain/interfaces/ITask";
+import app from "@infrastructure/api/server";
 
 describe("GET /tasks", () => {
   it("should return an empty array if there is no task", async () => {

@@ -11,7 +11,7 @@
     "baseUrl": "./src",
     "paths": {
       "@domain/*": ["domain/*"],
-      "@api/*": ["api/*"]
+      "@infrastructure/*": ["infrastructure/*"]
     },
     "noImplicitReturns": true,
     "allowJs": true,
