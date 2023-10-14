@@ -6,6 +6,6 @@ module.exports = {
   testMatch: ["**/*.spec.ts"],
   moduleNameMapper: {
     "^@domain/(.*)$": "<rootDir>/src/domain/$1",
-    "^@api/(.*)$": "<rootDir>/src/api/$1",
+    "^@infrastructure/(.*)$": "<rootDir>/src/infrastructure/$1",
   },
 };
