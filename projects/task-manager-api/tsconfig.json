@@ -17,6 +17,10 @@
     "allowJs": true,
     "checkJs": false
   },
-  "include": ["src/**/*.ts", "tests/integration/tasks.spec.ts"],
+  "include": [
+    "src/**/*.ts",
+    "tests/integration/tasks.spec.ts",
+    "node_modules/@prisma/client/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
