@@ -19,8 +19,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "tests/integration/tasks.spec.ts",
+    "tests/integration/*.spec.ts",
     "node_modules/@prisma/client/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+  ]
+  // "exclude": ["node_modules"]
 }
